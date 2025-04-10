@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // Add email notification functionality
     try {
-      await fetch('https://formsubmit.co/ajax/digital@farmina.in', {
+      await fetch('https://formsubmit.co/ajax/princeydv172003@gmail.com', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
