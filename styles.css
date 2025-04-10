@@ -20,12 +20,12 @@ body {
 }
 
 .logo {
-  font-size: 24px;
+  font-size: 14px;
   font-weight: 700;
-  color: #ff7e5f;
+  color: #2978f3;
   text-decoration: none;
   background: white;
-  padding: 8px 15px;
+  /* padding: 8px 15px; */
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   letter-spacing: 1px;
@@ -53,11 +53,12 @@ body {
 header {
   text-align: center;
   margin-bottom: 30px;
-  padding: 20px;
-  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  padding: 2%;
+  background: linear-gradient(135deg, #0064f9, #bccee5);
   color: white;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
 }
 
 h1 {
@@ -67,8 +68,8 @@ h1 {
 
 h2 {
   font-size: 1.8rem;
-  margin-bottom: 20px;
-  color: #ff7e5f;
+  margin-bottom: 2%;
+  color: #2b87e9;
 }
 
 .steps-container {
@@ -186,10 +187,12 @@ select:focus {
 
 /* Button Styles */
 .btn {
-  display: block;
-  width: 100%;
-  padding: 15px;
-  background-color: #ff7e5f;
+  display: table-column;
+  width: 50%;
+  position: relative;
+  left: 25%;
+  padding: 3%;
+  background-color: #2d7ff9;
   color: white;
   border: none;
   border-radius: 5px;
@@ -197,7 +200,7 @@ select:focus {
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.3s;
-  margin: 20px 0;
+  margin: 2% 0;
 }
 
 .btn:hover {
