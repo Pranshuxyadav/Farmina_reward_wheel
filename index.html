@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promotional Campaign</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/html5-qrcode"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
+</head>
+<body>
+    <div class="logo-container">
+        <a href="index.html" class="logo">FARMINA</a>
+    </div>
+    <div class="container">
+        <header>
+            <h1>Win Exciting Rewards!</h1>
+            <p>Scan, Register, and Spin to Win</p>
+        </header>
+
+        <div class="steps-container">
+            <!-- Step 1: QR Scanner -->
+            <div class="step" id="step-1">
+                <h2>Step 1: Scan QR Code</h2>
+                <div id="qr-reader"></div>
+                <div id="qr-reader-results"></div>
+                <button id="skip-scanner" class="btn">Skip Scanner (Demo)</button>
+            </div>
+
+            <!-- Step 2: User Information Form -->
+            <div class="step" id="step-2" style="display: none;">
+                <h2>Step 2: Your Information</h2>
+                <form id="user-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="pet-type">Pet Type</label>
+                        <select id="pet-type" name="pet-type" required>
+                            <option value="">Select your pet</option>
+                            <option value="dog">Dog</option>
+                            <option value="cat">Cat</option>
+                            <option value="bird">Bird</option>
+                            <option value="fish">Fish</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div id="phone-error" class="error-message" style="display: none;">
+                        This phone number has already participated in the promotion.
+                    </div>
+                    <button type="submit" class="btn">Continue</button>
+                </form>
+            </div>
+
+            <!-- Step 3: Reward Wheel -->
+            <div class="step" id="step-3" style="display: none;">
+                <h2>Step 3: Spin to Win!</h2>
+                <div class="wheel-container">
+                    <canvas id="wheel-canvas" width="300" height="300"></canvas>
+                    <div id="wheel-pointer"></div>
+                </div>
+                <button id="spin-button" class="btn">Spin the Wheel</button>
+            </div>
+
+            <!-- Step 4: Result -->
+            <div class="step" id="step-4" style="display: none;">
+                <h2>Congratulations!</h2>
+                <div id="result-container">
+                    <p>You've won: <span id="prize-name">Prize Name</span></p>
+                    <div class="coupon">
+                        <h3>Your Coupon Code</h3>
+                        <p id="coupon-code">XXXX-XXXX-XXXX</p>
+                        <p class="expiry">Valid until: <span id="expiry-date"></span></p>
+                    </div>
+                </div>
+                <button id="restart-button" class="btn">Start Over</button>
+            </div>
+        </div>
+
+        <!-- Admin Section (Hidden by default) -->
+        <div id="admin-section" class="admin-section">
+            <h2>Admin Panel</h2>
+            <div class="admin-controls">
+                <button id="generate-qr" class="btn admin-btn">Generate Homepage QR Code</button>
+                <button id="export-data" class="btn admin-btn">Export User Data (CSV)</button>
+                <button id="view-data" class="btn admin-btn">View User Data</button>
+                <button id="clear-data" class="btn admin-btn">Clear All Data</button>
+            </div>
+            <div id="qr-container" class="qr-container" style="display: none;">
+                <h3>Homepage QR Code</h3>
+                <div id="qrcode"></div>
+                <p>Scan this code to access the promotion</p>
+            </div>
+            <div id="data-container" class="data-container" style="display: none;">
+                <h3>User Data</h3>
+                <table id="user-data-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Pet Type</th>
+                            <th>Prize Won</th>
+                            <th>Coupon Code</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="user-data-body"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Toggle Button (Hidden in plain sight) -->
+    <div id="admin-toggle" class="admin-toggle">⚙️</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
